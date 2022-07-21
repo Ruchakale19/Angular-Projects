@@ -1,0 +1,29 @@
+
+<div>
+  <h4> Examplw for Add & Splice for Array</h4>
+
+  <table border="1" style="text-align: center;">
+    <tr>
+      <th>Emp ID</th>
+      <th> Emp Name</th>
+      <th> Salary</th>
+      <th> Action </th>
+    </tr>
+
+    <tr *ngFor="let e of employee; let i = index"> 
+      <td> {{ e.empId }} </td>
+      <td> {{ e.empName }} </td>
+      <td> {{ e.salary }} </td>
+      <td><input class="button" type="button" value="Delete" (click)="onDeleteClick(i)"></td>
+    </tr>
+    <tr> <br> </tr>
+    <tr>
+      <td><input type="number" [(ngModel)]="newEmployee.empId" placeholder="Employee Id"> </td>
+      <td><input type="text" [(ngModel)]="newEmployee.empName" placeholder="Employee Name"> </td>
+      <td><input type="number" [(ngModel)]="newEmployee.salary" placeholder="Employee Salary"> </td>
+      <td><input class="button" type="button" value="insert" (click)="onInsertClick()"></td>
+    </tr>
+  </table>
+</div>
+
+<router-outlet></router-outlet>
